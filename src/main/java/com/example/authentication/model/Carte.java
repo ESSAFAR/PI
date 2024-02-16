@@ -26,8 +26,8 @@ import java.util.Objects;
 @DiscriminatorColumn(name = "TYPE", length = 4)
 public class Carte {
     @Id
-    @GeneratedValue(generator = "custom-id")
-    @GenericGenerator(name = "custom-id", strategy = "com.example.authentication.model.CustomIDGenerator")
+//    @GeneratedValue(generator = "custom-id")
+//    @GenericGenerator(name = "custom-id", strategy = "com.example.authentication.model.CustomIDGenerator")
     @Column(name = "id", length = 16)
     private String id;
 

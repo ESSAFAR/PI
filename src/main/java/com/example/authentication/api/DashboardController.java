@@ -28,7 +28,7 @@ public class DashboardController {
     @GetMapping("/balance")
     public double getBalanceGlobale(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        Entreprise entreprise =  entrepriseRepository.findByNom(authentication.getName());
+        Entreprise entreprise =  entrepriseRepository.findByUsername(authentication.getName());
 
         return entreprise.getBalance();
     }

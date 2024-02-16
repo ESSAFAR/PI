@@ -8,8 +8,8 @@ import java.util.Optional;
 
 public interface CarteService {
     public List<Carte> getCards();
-    public Optional<Carte> getCard(Long id);
-    public float getSolde(Long id);
-    public List<Operation> getOperations(Long id);
-    public void addOperationToCard(Long id,Operation operation);
+    public Optional<Carte> getCard(String id);
+    public float getSolde(String id);
+    public List<Operation> getOperations(String id);
+    public void addOperationToCard(String id,Operation operation);
 }

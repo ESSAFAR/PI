@@ -22,24 +22,24 @@ public class CarteServiceImp implements CarteService{
     }
 
     @Override
-    public Optional<Carte> getCard(Long id) {
+    public Optional<Carte> getCard(String id) {
         return this.carteRepository.findById(id);
     }
 
     @Override
-    public float getSolde(Long id) {
+    public float getSolde(String id) {
         Carte carte=getCard(id).get();
         return carte.getSolde();
     }
 
     @Override
-    public List<Operation> getOperations(Long id) {
+    public List<Operation> getOperations(String id) {
         Carte carte=getCard(id).get();
         return (List<Operation>) carte.getOperations();
     }
 
     @Override
-    public void addOperationToCard(Long id, Operation operation) {
+    public void addOperationToCard(String id, Operation operation) {
         Carte carte=getCard(id).get();
         this.operationRepository.save(operation);
         carte.addOperation(operation);

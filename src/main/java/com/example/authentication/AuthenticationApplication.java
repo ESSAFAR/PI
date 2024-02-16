@@ -42,6 +42,7 @@ public class AuthenticationApplication {
             Employe employe=new Employe("adnane","0639799920","f147895",Employe.ddn("1990-01-15"), Sex.HOMME,entreprise);
             Employe employe2=new Employe("adnane2","06397999202","f6692142",Employe.ddn("1990-01-15"), Sex.HOMME,entreprise);
             CarteNominative carteNominative= CarteNominative.builder().employe(employe).build();
+            carteNominative.setId("0955593503530306");
             carteNominative.setStatus(Status.ACTIVATED);
             carteNominative.setEntreprise(entreprise);
             Operation operation1 = new Operation(CREDIT, "Credit 1",  (double) 100, new Date());
@@ -54,7 +55,7 @@ public class AuthenticationApplication {
             carteNominative.getOperations().add(operation2);
             carteNominative.getOperations().add(operation3);
 
-            entreprise=entrepriseRepository.save(entreprise);
+            entrepriseRepository.save(entreprise);
             employeRepository.save(employe);
             employeRepository.save(employe2);
             carteRepository.save(carteNominative);
